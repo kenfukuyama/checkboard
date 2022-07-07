@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check board</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+
+<style>
+        .color1 {
+        background-color: {{col1}};
+    }
+
+
+    .color2 {
+        background-color: {{col2}};
+    }
+</style>
+<body>
+    <!-- <h1>hello world!!</h1> -->
+    <div class="main">
+        <h1>*** Checkerboard ***</h1>
+        <!-- <div class="row">
+            <div class="col">hi</div>
+            <div class="col">hi</div>
+            <div class="col">hi</div>
+        </div> -->
+
+        <!-- <h2>{{rows}}, {{cols}}</h2> -->
+
+        <table>
+            {% for i in range(rows) %}
+                {% if i % 2 == 0 %} 
+                    <tr>
+                        {% for j in range(cols) %}
+                            {% if j % 2 == 0 %} 
+                                <th class="color1"></th>
+                            {% else %}
+                                <th class="color2"></th>
+                            {% endif %}
+                            
+                        {% endfor %}
+                    </tr>
+                {% else %}
+                    <tr>
+                        {% for j in range(cols) %}
+                            {% if j % 2 == 0 %} 
+                                <th class="color2"></th>
+                            {% else %}
+                                <th class="color1"></th>
+                            {% endif %}
+                            
+                        {% endfor %}
+                    </tr>
+                {% endif %}
+
+            {% endfor %}
+        </table>
+        <!-- <p>{{col1}}, {{col2}}</p> -->
+        <!-- <table>
+            <tr>
+                <th class="color1"></th>
+                <th class="color2"></th>
+                <th class="color1"></th>
+                <th class="color2"></th>
+            </tr>
+            <tr>
+                <th class="color1"></th>
+                <th class="color2"></th>
+                <th class="color1"></th>
+                <th class="color2"></th>
+            </tr>
+            <tr>
+                <th class="color1"></th>
+                <th class="color2"></th>
+                <th class="color1"></th>
+                <th class="color2"></th>
+            </tr>
+            <tr>
+                <th class="color1"></th>
+                <th class="color2"></th>
+                <th class="color1"></th>
+                <th class="color2"></th>
+            </tr> -->
+            
+        </table>
+    </div>
+</body>
+
+
+</html>
