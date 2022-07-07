@@ -10,11 +10,14 @@
 
 <style>
         .color1 {
+        background-color: red;
         background-color: {{col1}};
     }
 
 
     .color2 {
+        
+        background-color: black;
         background-color: {{col2}};
     }
 </style>
@@ -36,9 +39,9 @@
                     <tr>
                         {% for j in range(cols) %}
                             {% if j % 2 == 0 %} 
-                                <th class="color1"></th>
+                                <th class="color1">{{(i+j) % 2}}</th>
                             {% else %}
-                                <th class="color2"></th>
+                                <th class="color2">{{(i+j) % 2}}</th>
                             {% endif %}
                             
                         {% endfor %}
@@ -47,13 +50,14 @@
                     <tr>
                         {% for j in range(cols) %}
                             {% if j % 2 == 0 %} 
-                                <th class="color2"></th>
+                                <th class="color2">{{(i+j) % 2}}</th>
                             {% else %}
-                                <th class="color1"></th>
+                                <th class="color1">{{(i+j) % 2}}</th>
                             {% endif %}
                             
                         {% endfor %}
                     </tr>
+                    
                 {% endif %}
 
             {% endfor %}
